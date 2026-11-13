@@ -1,0 +1,7 @@
+# Use this workspace to collaborate
+workspace:
+  id: 11fb9d48-4e8e-44dd-828d-e942d4d18b5f
+
+localResources:
+  specs:
+    - ../obj/Debug/net10.0/EndpointInfo/StudentGradeManagement.API.json
