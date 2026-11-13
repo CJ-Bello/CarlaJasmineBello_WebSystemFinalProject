@@ -1,0 +1,137 @@
+﻿
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #eef4fb;
+    color: #1e293b;
+}
+
+.login-container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 20px;
+}
+
+
+
+.login-header {
+    text-align: center;
+    margin-bottom: 24px;
+}
+
+    .login-header h1 {
+        color: #1e40af;
+        font-size: 28px;
+        font-weight: 700;
+        line-height: 1.35;
+    }
+
+
+
+.login-card {
+    width: 100%;
+    max-width: 380px;
+    background: #ffffff;
+    padding: 32px;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(30, 64, 175, 0.10);
+    border: 1px solid #dbeafe;
+}
+
+    .login-card h2 {
+        text-align: center;
+        color: #1e3a8a;
+        font-size: 24px;
+        margin-bottom: 8px;
+    }
+
+.login-description {
+    text-align: center;
+    color: #64748b;
+    font-size: 14px;
+    margin-bottom: 25px;
+}
+
+
+
+.form-group {
+    margin-bottom: 18px;
+}
+
+    .form-group label {
+        display: block;
+        font-size: 14px;
+        font-weight: 600;
+        margin-bottom: 8px;
+        color: #334155;
+    }
+
+.form-control {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #cbd5e1;
+    border-radius: 7px;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+    .form-control:focus {
+        border-color: #2563eb;
+        box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+    }
+
+
+
+.login-button {
+    width: 100%;
+    padding: 12px;
+    background: #2563eb;
+    color: #ffffff;
+    border: none;
+    border-radius: 7px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+    .login-button:hover {
+        background: #1d4ed8;
+    }
+
+
+
+.validation-summary {
+    color: #dc2626;
+    font-size: 13px;
+    margin-bottom: 15px;
+}
+
+    .validation-summary:empty {
+        display: none;
+    }
+
+.field-error {
+    display: block;
+    color: #dc2626;
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+
+
+.login-footer {
+    margin-top: 22px;
+    color: #94a3b8;
+    font-size: 12px;
+    text-align: center;
+}

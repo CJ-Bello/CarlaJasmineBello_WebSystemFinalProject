@@ -1,0 +1,103 @@
+﻿@{
+    ViewData["Title"] = "Student Dashboard";
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Student Dashboard - Student Grade Management System</title>
+
+    <link rel="stylesheet" href="~/css/student.css" asp-append-version="true" />
+</head>
+
+<body>
+
+    <div id="studentDashboard"
+         data-token="@ViewBag.Token"
+         data-full-name="@ViewBag.FullName">
+
+        <header class="student-header">
+            <div>
+                <h1>Student Grade Management System</h1>
+                <p>Student Dashboard</p>
+            </div>
+
+            <form asp-controller="Account"
+                  asp-action="Logout"
+                  method="post">
+
+                @Html.AntiForgeryToken()
+
+                <button type="submit" class="logout-button">
+                    Logout
+                </button>
+            </form>
+        </header>
+
+        <main class="dashboard-content">
+
+            <section class="welcome-card">
+                <h2>Welcome, <span id="studentName">@ViewBag.FullName</span>!</h2>
+                <p>Here is an overview of your academic grades.</p>
+
+                <div class="student-information">
+                    <div>
+                        <span class="info-label">Student Number</span>
+                        <strong id="studentNumber">Loading...</strong>
+                    </div>
+
+                    <div>
+                        <span class="info-label">Student Name</span>
+                        <strong id="studentFullName">@ViewBag.FullName</strong>
+                    </div>
+                </div>
+            </section>
+
+            <section class="grades-section">
+
+                <div class="section-heading">
+                    <h2>My Grades</h2>
+                    <p>Your academic performance records</p>
+                </div>
+
+                <p id="studentDashboardMessage">
+                    Loading your grades...
+                </p>
+
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Subject Code</th>
+                                <th>Subject Name</th>
+                                <th>Faculty</th>
+                                <th>Grade</th>
+                                <th>Remarks</th>
+                                <th>Semester</th>
+                                <th>School Year</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="studentGradesTableBody">
+                        </tbody>
+                    </table>
+                </div>
+
+            </section>
+
+        </main>
+
+        <footer class="student-footer">
+            Student Grade Management System
+        </footer>
+
+    </div>
+
+    <script src="~/js/student.js" asp-append-version="true"></script>
+
+</body>
+</html>

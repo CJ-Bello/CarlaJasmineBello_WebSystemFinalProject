@@ -1,0 +1,217 @@
+﻿
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f1f5f9;
+    color: #1e293b;
+}
+
+
+
+.student-header {
+    background: #1e40af;
+    color: white;
+    padding: 22px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+    .student-header h1 {
+        font-size: 23px;
+        margin-bottom: 5px;
+    }
+
+    .student-header p {
+        font-size: 14px;
+        color: #dbeafe;
+    }
+
+
+
+.logout-button {
+    background: white;
+    color: #1e40af;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+    .logout-button:hover {
+        background: #dbeafe;
+    }
+
+
+
+.dashboard-content {
+    max-width: 1200px;
+    margin: 35px auto;
+    padding: 0 25px;
+}
+
+
+
+.welcome-card {
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    border: 1px solid #dbeafe;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.05);
+    margin-bottom: 30px;
+}
+
+    .welcome-card h2 {
+        color: #1e3a8a;
+        font-size: 22px;
+        margin-bottom: 8px;
+    }
+
+    .welcome-card > p {
+        color: #64748b;
+        font-size: 14px;
+        margin-bottom: 22px;
+    }
+
+.student-information {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px;
+    border-top: 1px solid #e2e8f0;
+    padding-top: 18px;
+}
+
+    .student-information div {
+        display: flex;
+        flex-direction: column;
+        gap: 7px;
+    }
+
+.info-label {
+    color: #64748b;
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.student-information strong {
+    color: #1e40af;
+    font-size: 15px;
+}
+
+
+
+.grades-section {
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    border: 1px solid #dbeafe;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.05);
+}
+
+.section-heading {
+    margin-bottom: 20px;
+}
+
+    .section-heading h2 {
+        color: #1e3a8a;
+        font-size: 20px;
+        margin-bottom: 6px;
+    }
+
+    .section-heading p {
+        color: #64748b;
+        font-size: 13px;
+    }
+
+
+
+#studentDashboardMessage {
+    color: #64748b;
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+    #studentDashboardMessage.error {
+        color: #dc2626;
+    }
+
+
+
+.table-container {
+    width: 100%;
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 750px;
+}
+
+thead {
+    background: #eff6ff;
+}
+
+th {
+    color: #1e40af;
+    font-size: 13px;
+    text-align: left;
+    padding: 14px;
+    border-bottom: 2px solid #dbeafe;
+    white-space: nowrap;
+}
+
+td {
+    padding: 14px;
+    font-size: 13px;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+tbody tr:hover {
+    background: #f8fafc;
+}
+
+
+
+.student-footer {
+    text-align: center;
+    color: #94a3b8;
+    font-size: 12px;
+    padding: 20px;
+    margin-top: 25px;
+}
+
+
+
+@media (max-width: 650px) {
+    .student-header {
+        padding: 18px 20px;
+        gap: 15px;
+        flex-wrap: wrap;
+    }
+
+        .student-header h1 {
+            font-size: 19px;
+        }
+
+    .dashboard-content {
+        margin: 20px auto;
+        padding: 0 15px;
+    }
+
+    .student-information {
+        gap: 20px;
+    }
+
+    .welcome-card,
+    .grades-section {
+        padding: 18px;
+    }
+}

@@ -1,0 +1,134 @@
+﻿@{
+    ViewData["Title"] = "Faculty Dashboard";
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Faculty Dashboard</title>
+
+    <link rel="stylesheet" href="~/css/faculty.css" asp-append-version="true" />
+</head>
+<body>
+
+    <div id="facultyDashboard"
+         data-token="@ViewBag.Token"
+         data-full-name="@ViewBag.FullName">
+
+        <header class="dashboard-header">
+            <div>
+                <h1>Faculty Dashboard</h1>
+                <p>Welcome, @ViewBag.FullName!</p>
+            </div>
+
+            <form asp-controller="Account"
+                  asp-action="Logout"
+                  method="post">
+                @Html.AntiForgeryToken()
+                <button type="submit" class="logout-button">
+                    Logout
+                </button>
+            </form>
+        </header>
+
+        
+        <main class="dashboard-content">
+            <div class="dashboard-title">
+                <h2>Student Grades</h2>
+
+                <button type="button" id="addGradeButton" class="add-button">
+                    + Add Grade
+                </button>
+            </div>
+
+            <section id="gradeFormSection" class="grade-form-section" hidden>
+                <h3 id="gradeFormTitle">Add New Grade</h3>
+
+                <form id="gradeForm">
+                    <input type="hidden" id="gradeId" />
+
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="studentId">Student ID</label>
+                            <input type="number" id="studentId"
+                                   min="1" required />
+                        </div>
+
+                        <div class="form-group">
+                            <label for="subjectCode">Subject Code</label>
+                            <input type="text" id="subjectCode"
+                                   maxlength="30" required />
+                        </div>
+
+                        <div class="form-group">
+                            <label for="subjectName">Subject Name</label>
+                            <input type="text" id="subjectName"
+                                   maxlength="200" required />
+                        </div>
+
+                        <div class="form-group">
+                            <label for="grade">Grade</label>
+                            <input type="number" id="grade"
+                                   min="0" max="100" step="1" required />
+                        </div>
+
+                        <div class="form-group">
+                            <label for="semester">Semester</label>
+                            <input type="text" id="semester"
+                                   maxlength="50" required />
+                        </div>
+
+                        <div class="form-group">
+                            <label for="schoolYear">School Year</label>
+                            <input type="text" id="schoolYear"
+                                   maxlength="20" required />
+                        </div>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="submit" id="saveGradeButton"
+                                class="save-button">
+                            Save Grade
+                        </button>
+
+                        <button type="button" id="cancelGradeButton"
+                                class="cancel-button">
+                            Cancel
+                        </button>
+                    </div>
+                </form>
+            </section>
+
+            <p id="dashboardMessage">Loading student grades...</p>
+
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Student Number</th>
+                            <th>Student Name</th>
+                            <th>Subject Code</th>
+                            <th>Subject Name</th>
+                            <th>Grade</th>
+                            <th>Remarks</th>
+                            <th>Semester</th>
+                            <th>School Year</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="gradesTableBody">
+                    </tbody>
+                </table>
+            </div>
+        </main>
+
+
+    </div>
+
+    <script src="~/js/faculty.js" asp-append-version="true"></script>
+</body>
+</html>

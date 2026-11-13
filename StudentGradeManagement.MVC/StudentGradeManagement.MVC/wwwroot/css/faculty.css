@@ -1,0 +1,258 @@
+﻿
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f1f5f9;
+    color: #1e293b;
+}
+
+
+
+.dashboard-header {
+    background: #1e40af;
+    color: white;
+    padding: 22px 35px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+    .dashboard-header h1 {
+        font-size: 25px;
+        margin-bottom: 6px;
+    }
+
+    .dashboard-header p {
+        font-size: 14px;
+        color: #dbeafe;
+    }
+
+
+
+.logout-button {
+    background: white;
+    color: #1e40af;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+    .logout-button:hover {
+        background: #dbeafe;
+    }
+
+
+
+.dashboard-content {
+    padding: 30px 35px;
+}
+
+    .dashboard-content h2 {
+        font-size: 22px;
+        color: #1e3a8a;
+        margin-bottom: 20px;
+    }
+
+
+
+.table-container {
+    width: 100%;
+    overflow-x: auto;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.05);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 900px;
+}
+
+thead {
+    background: #dbeafe;
+}
+
+th {
+    color: #1e3a8a;
+    font-size: 13px;
+    text-align: left;
+    padding: 15px;
+    white-space: nowrap;
+}
+
+td {
+    padding: 14px 15px;
+    border-top: 1px solid #e2e8f0;
+    font-size: 13px;
+}
+
+tbody tr:hover {
+    background: #f8fafc;
+}
+
+
+
+#dashboardMessage {
+    margin-bottom: 15px;
+    font-size: 14px;
+    color: #64748b;
+}
+
+    #dashboardMessage.error {
+        color: #dc2626;
+    }
+
+
+/* =========================================
+   FACULTY DASHBOARD - GRADE MANAGEMENT
+========================================= */
+
+.dashboard-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+    .dashboard-title h2 {
+        margin-bottom: 0;
+    }
+
+.add-button {
+    background: #2563eb;
+    color: white;
+    border: none;
+    padding: 11px 18px;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+    .add-button:hover,
+    .save-button:hover {
+        background: #1d4ed8;
+    }
+
+/* Add / Edit Grade Form */
+
+.grade-form-section {
+    background: white;
+    padding: 25px;
+    margin-bottom: 25px;
+    border-radius: 10px;
+    border: 1px solid #dbeafe;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.05);
+}
+
+    .grade-form-section[hidden] {
+        display: none;
+    }
+
+    .grade-form-section h3 {
+        color: #1e3a8a;
+        font-size: 18px;
+        margin-bottom: 20px;
+    }
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+    .form-group label {
+        font-size: 13px;
+        font-weight: bold;
+        color: #334155;
+    }
+
+    .form-group input {
+        padding: 11px;
+        border: 1px solid #cbd5e1;
+        border-radius: 6px;
+        font-size: 14px;
+    }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: #2563eb;
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.10);
+        }
+
+.form-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 22px;
+}
+
+.save-button,
+.cancel-button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.save-button {
+    background: #2563eb;
+    color: white;
+}
+
+.cancel-button {
+    background: #e2e8f0;
+    color: #334155;
+}
+
+    .cancel-button:hover {
+        background: #cbd5e1;
+    }
+
+
+
+.edit-button,
+.delete-button {
+    padding: 7px 11px;
+    border: none;
+    border-radius: 5px;
+    font-size: 12px;
+    cursor: pointer;
+    margin-right: 4px;
+}
+
+.edit-button {
+    background: #dbeafe;
+    color: #1e40af;
+}
+
+.delete-button {
+    background: #fee2e2;
+    color: #b91c1c;
+}
+
+@media (max-width: 650px) {
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .dashboard-title {
+        align-items: flex-start;
+        gap: 12px;
+        flex-direction: column;
+    }
+}
