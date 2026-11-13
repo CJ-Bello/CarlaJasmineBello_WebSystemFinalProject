@@ -1,0 +1,11 @@
+.vs/
+bin/
+obj/
+Debug/
+Release/
+*.user
+*.suo
+appsettings.Development.json
+secrets.json
+*.log
+*.tmp
